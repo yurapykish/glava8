@@ -55,7 +55,6 @@
                  <h2>{% block title %}{% endblock title %}</h2>
 		{% block content %}{% endblock content %}
 
-                
       </div>
     </div><!--END staRT PAGE-->
 
