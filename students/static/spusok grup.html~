@@ -2,8 +2,7 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Сервіс Обліку Студентів</title>
+    <title>Список груп</title>
     <meta name= "discription"
           value="Система Обліку Студентів Навчального Закладу"/>
     <!-- Підключаємо Css-->
@@ -22,7 +21,7 @@
         <h1>Сервіс Обліку Студентів</h1>
     </div>
       <!--Group selector-->
-      <div class="col-xs-4" id="group-selector">
+      <div class=col-xs-4">
           <strong>Групи:</strong>
           <select>
             <option value=””>Усі Студенти</option>
@@ -36,9 +35,9 @@
   <div class="row" id="sub-header">
     <div class="col-xs-12">
         <ul class="nav nav-tabs">
-          <li role="presentation" class="active"><a href="./test1.html">Студенти</a></li>
+          <li role="presentation" class="active"><a href="#">Студенти</a></li>
           <li role="presentation"><a href="#">Відвідування</a></li>
-          <li role="presentation"><a href="./spusok.grup.html">Групи</a></li>
+          <li role="presentation"><a href="#">Групи</a></li>
         </ul>
     </div>
   </div> <!--END sub-header-->
@@ -47,8 +46,8 @@
       <div class=”col-xs-12” id=”content-column”>
           <!-- Status Message -->
            <div class="alert alert-warning" role="alert">Студент успішно доданий</div>
-                 <h2>База Студентів</h2>
-                 <a href="#" class="btn btn-primary">Додати Студента</a>
+                 <h2>Групи</h2>
+                 <a href="#" class="btn btn-primary">Додати Групу</a>
           <!--tablE-->
           <table class="table table-hover table-striped">
               <thead>
@@ -103,7 +102,7 @@
                   </td>
               </tr>
               <tr>
-                  <td>3</td>
+                  <td>2</td>
                   <td><img src="./img/V1nvvYJCUtU.jpg" width="30px" height="30px" class="img-circle"/></td>
                   <td><a title=”Редагувати” href=”#”>Пукіш</a></td>
                   <td><a title=”Редагувати” href=”#”>Юрій</a></td>

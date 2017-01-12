@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Сервіс Обліку Студентів</title>
+    <!-- Підключаємо Css-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link  rel="stylesheet"
+           href="./css/main.css">
+
+</head>
+<body>
+<style>
+    form {
+    width: 500xp;
+    margin-top: 20px auto;
+    }
+    label {
+    margin-top: 10px;
+    margin-left:150px;
+    width: 150px;
+    display: inline-block;
+    cursor: pointer;
+            }
+
+#submit {
+     margin-left:300px;
+    width: 120px;
+    height: 30px;
+color: white;
+border-radius: 23px;
+background-color: blue;
+border-color: blue blue;
+   }
+   #clear {
+   margin-left: 20px;
+   color: blue;
+   }
+   #img {
+position: absolute;
+left: 380px;
+bottom: 370px;
+}
+#img2 {
+position: absolute;
+left: 386px;
+bottom: 297px;
+}
+#img3 {
+position: absolute;
+left: 320px;
+bottom: 340px;
+}
+.q {
+background: grey;
+border: 1px solid grey;
+width: 990px;
+height: 200px;
+}
+</style>
+
+
+<h1>Форма редагування студента</h1>
+
+
+            <form>
+                <p><label for="name">Ім'я*</label> <input type="text" name="first_name" id="name" placeholder="Введіть ім'я" required autofocus></p>
+
+                <p><label for="name1">По-батькові</label> <input type="text" name="first_name1" id="name1" placeholder="Введіть по-батькові"></p>
+
+                <p><label for="name2">Прізвище*</label> <input type="text" name="first_name" id="name2" placeholder="Введіть прізвище" required></p>
+                <p><label for="tell">№ телефону*</label> <input type="tel" name="first_name" id="tell" placeholder="Введіть телефон" required></p>
+                  <p><label for="bilet">№ білету</label> <input type="number" name="first_name" id="bilet" placeholder="Введіть номер білета"></p>
+                <p><label for="dr">Дата народження</label> <input type="date" name="first_name" id="dr" placeholder="Введіть дату народження"></p>
+                <p><label for="img">Фото</label>Наразі:<input type ="file" id="img"><input type="reset" value="Очистити" id="img3"></p><br>
+                <br><label for="img2"></label>Змінити:<input  type ="file" id="img2" >
+
+                <p><label>Група*</label><select><option>Виберіть групу</option>
+                <option>Мтм-21</option>
+                <option>МтМ-22</option>
+                <option>Мтм-23</option></select></p>
+                <p><label for="text">Додаткові нотатки</label><textarea name="text" id="text" cols="22" rows="5" placeholder="Введіть нотатку"></textarea></p>
+
+                <p class="q"><input type="submit" id="submit" value="Зберегти"><input type="reset" value="Скасувати" id="clear"></p>
+            </form>
+
+
+
+
+
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+</html>
