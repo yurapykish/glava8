@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static from staticfiles %}
+{% load staticfiles %}
 {% block meta_title %}Список груп {% endblock meta_title %}
 {% block title %}Групи{% endblock title %}
 {% block content %}
@@ -28,7 +28,6 @@
                   </button>
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="{% url "groups_edit" groups.id %}">Редагувати</a></li>
- 
                     <li><a href="{% url "groups_delete" groups.id %}">Видалити</a></li>
                   </ul>
                 </div>
