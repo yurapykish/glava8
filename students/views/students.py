@@ -8,7 +8,7 @@ def students_list(request):
 	 'first_name': u'Віталій',
 	 'last_name': u'Подоба',
 	 'ticket': 2123,
-	 'image': 'img/k4DBbnUiaW8.jpg'},
+	 'image': 'img/wtfy9wywIuo.jpg'},
 	{'id': 2,
 	 'first_name': u'Андрій',
 	 'last_name': u'Пукіш',

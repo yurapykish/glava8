@@ -2,6 +2,11 @@
 {% load staticfiles %}
 {% block meta_title %}Список груп {% endblock meta_title %}
 {% block title %}Групи{% endblock title %}
+{% block logo%}Сервіс Обліку Студентів{% endblock logo%}
+{% block groups %}
+            <option value=””>МтМ - 21, Подоба Віталій (No 254)</option>
+            <option value=””>МтМ - 22, Пукіш Андрій (No 2123)</option>
+{% endblock groups %}  
 {% block content %}
 
 <a href="{% url "groups_add" %}" class="btn btn-primary">Додати Групу</a>
@@ -16,7 +21,7 @@
               </thead>
               <tbody>
 	{% for groups in groups %}
-              <tr>0
+              <tr>
                   <td>{{ forloop.counter }}</td>
                   <td><a title=”Редагувати” href="{% url 'groups_edit' groups.id %}">{{groups.groups_name}}</a></td>
                   <td><a title=”Редагувати” href="{% url 'groups_edit' groups.id %}">{{groups.groups_starosta}}</a></td>
@@ -48,3 +53,4 @@
     </div><!--END staRT PAGE-->
 
  {% endblock content %}
+{% block footer %}&copy; 2017 Сервіс Обліку Студентів{% endblock footer %}
