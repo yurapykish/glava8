@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block meta_title %}Відвідування{% endblock meta_title %}
+{% block title %}Журнал відвідування{% endblock title %}
+  {% block content %}      <!--sichenb-->
+        <div class="row" id="content-columns">
+            <div class="col-xs-12">
+                <h3 style="text-align:center;">
+                    <a href="#">&larr;</a>
+                    Січень 2017
+                    <a href="#">&rarr;</a></h3>
+        <table class="table table-hover table-striped">
+            <thead>
+              <tr text-aling="center">
+                <th text-aling="center">#</th>
+                <th>Студент</th>
+                <th >Ср 1</th>
+                <th>Чт 2</th>
+                <th>Пн 3</th>
+                <th>Сб 4</th>
+                <th>Нд 5</th>
+                <th>Пн 6</th>
+                <th>Вт 7</th>
+                <th>Ср 8</th>
+                <th>Чт 9</th>
+                <th>Пн 10</th>
+                <th>Сб 11</th>
+                <th>Нд 12</th>
+                <th>Пн 13</th>
+                <th>Вт 14</th>
+                <th>Ср 15</th>
+                <th>Чт 16</th>
+                <th>Пн 17</th>
+                <th>Сб 18</th>
+                <th>Нд 19</th>
+                <th>Пн 20</th>
+                <th>Вт 21</th>
+                <th>Ср 22</th>
+                <th>Чт 23</th>
+                <th>Пн 24</th>
+                <th>Сб 25</th>
+                <th>Нд 26</th>
+                <th>Пн 27</th>
+                <th>Вт 28</th>
+                <th>Ср 29</th>
+                <th>Чт 30</th>
+                <th>Пн 31</th>
+              </tr>
+	</thead>
+           <tbody>
+	{% for students in students %}
+		<tr>
+			<td>{{ forloop.counter }}</td>
+			<td><a href="{% url 'students_edit' students.id %}">{{ students.last_name }}<br>{{ students.first_name }}</a></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+		</tr>
+	{% endfor %}
+	</tbody>
+</table>
+            </div>
+        </div>
+{% endblock content %}
+     

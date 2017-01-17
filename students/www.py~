@@ -40,7 +40,7 @@ def groups_list(request):
 	'groups_name': u'Мтм-3',
 	'groups_starosta': u'Іванов Андрій'},
 	)
-    return render(request, 'groups_list.html', {'groups': groups})
+    return render(request, 'journal.html', {'groups': groups})
 def groups_add(request):
     return HttpResponse('<h1>Group Add Form</h1>')
 def groups_edit(request, gid):
@@ -48,5 +48,5 @@ def groups_edit(request, gid):
 def groups_delete(request, gid):
     return HttpResponse('<h1>Delete Group %s</h1>' % gid)
 def journal(request):
-    return HttpResponse('<h1>jounal Student </h1>')
+    return render(request, 'journal.html', {})
 
