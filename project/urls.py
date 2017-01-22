@@ -32,3 +32,17 @@ urlpatterns  = [
 	url(r"^journal/$", journal.journal, name="journal"),
 	url(r"^admin/", admin.site.urls),	
 ]
+
+from .settings import MEDIA_ROOT, DEBUG 
+from django.conf import settings
+from django.views.static import serve
+
+# ... the rest of your URLconf goes here ...
+
+if DEBUG:
+    urlpatterns += [
+        url(r'^media/(?P<path>.*)$', serve, {
+            'document_root': settings.MEDIA_ROOT,
+        }),
+    ]
+
