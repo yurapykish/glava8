@@ -9,22 +9,28 @@
 {% endblock groups %}  
 {% block content %}
 
-<a href="{% url "groups_add" %}" class="btn btn-primary">Додати Групу</a>
+<a href="{% url 'groups_add' %}" class="btn btn-primary">Додати Групу</a>
 <table class="table table-hover table-striped">
               <thead>
+{% with order_by=request.GET.order_by reverse=request.GET.reverse %}
               <tr>
-                  <th><a href=””>№</a></th>
-                <th><a href=””>Назва &uarr;</a></th>
-                <th><a href=”#”>Староста</a></th>
+                  <th><a href="{% url "groups" %}?order_by=id{% if order_by == 'id' and reverse != '1' %}&amp;reverse=1{% endif %}">№{% if order_by == 'id' and reverse != '1' %}&uarr;{% elif order_by == 'id' and reverse == '1' %}&darr;{% endif %}</a></th>
+                <th><a href="{% url "groups" %}?order_by=title{% if order_by == 'title' and reverse != '1' %}&amp;reverse=1{% endif %}">
+		Назва
+		{% if order_by == 'title' and reverse != '1' %}&uarr;{% elif order_by == 'title' and reverse == '1' %}&darr;{% endif %}
+		 </a></th>
+                <th><a href="{% url "groups" %}?order_by=leader{% if order_by == 'leader' and reverse != '1' %}&amp;reverse=1{% endif %}">Староста
+{% if order_by == 'leader' and reverse != '1' %}&uarr;{% elif order_by == 'leader' and reverse == '1' %}&darr;{% endif %}</a></th> 
                 <th>Дії</th>
+{% endwith %}
               </tr>
               </thead>
               <tbody>
-	{% for groups in groups %}
+	{% for group in groups %}
               <tr>
                   <td>{{ forloop.counter }}</td>
-                  <td><a title=”Редагувати” href="{% url 'groups_edit' groups.id %}">{{groups.groups_name}}</a></td>
-                  <td><a title=”Редагувати” href="{% url 'groups_edit' groups.id %}">{{groups.groups_starosta}}</a></td>
+                  <td><a title=”Редагувати” href="{% url "groups_edit" group.id %}">{{group.title}}</a></td>
+                  <td>{% if group.leader %}<a title=”Редагувати” href="{% url "groups_edit" groups.id %}">{{group.leader.last_name}}{{group.leader.first_name}}</a>{% else %}Немає</td>{% if %}
                   <td>
                       <div class="btn-group">
                   <button type="button" class="btn btn-default dropdown-toggle"
@@ -32,16 +38,17 @@
                     <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="{% url 'groups_edit' groups.id %}">Редагувати</a></li>
-                    <li><a href="{% url 'groups_delete' groups.id %}">Видалити</a></li>
+                    <li><a href="{% url "groups_edit" group.id %}">Редагувати</a></li>
+                    <li><a href="{% url "groups_delete" group.id %}">Видалити</a></li>
                   </ul>
                 </div>
                   </td>
               </tr>
-               {% endfor %}
+         {% endfor %}
               </tbody>
           </table>
-            {% include "students/pagination.html" %}
+ {% include "pagination.html" %}
+{% endblock content %}
 
- {% endblock content %}
 {% block footer %}&copy; 2017 Сервіс Обліку Студентів{% endblock footer %}
+

@@ -39,6 +39,12 @@
           {% elif order_by == 'first_name' and reverse == '1' %}&darr;
           {% endif %}
       </th>
+<td><a title='Редагувати' href="{% url 'home'%}?order_by=student_group{% if order_by == 'student_group' and reverse != '1' %}&amp;reverse=1{% endif %}">
+Група
+	  {% if order_by == 'student_group' and reverse != '1' %}&uarr;
+          {% elif order_by == 'student_group' and reverse == '1' %}&darr;
+          {% endif %}
+</a></td>
       <th>
         <a href="{% url 'home' %}?order_by=ticket{% if order_by == 'ticket' and reverse != '1' %}&amp;reverse=1{% endif %}">
           № Білету
@@ -63,6 +69,7 @@
 {% endif %} 
                   <td><a title='Редагувати' href="{% url 'students_edit' student.id %}">{{student.last_name}}</a></td>
                   <td><a title='Редагувати' href="{% url 'students_edit' student.id %}">{{student.first_name}}</a></td>
+<td><a title='Редагувати' href="{% url 'students_edit' student.id %}">{{student.student_group}}</a></td>
                   <td>{{student.ticket}}</td>
                   <td>
                       <div class="btn-group">
