@@ -29,10 +29,10 @@
           <strong>Групи:</strong>
           <select>
             <option value=””>Усі Студенти</option>
-{%block groups%}
+{% block groups %}
             <option value=””>МтМ - 21, Подоба Віталій (No 254)</option>
             <option value=””>МтМ - 22, Пукіш Андрій (No 2123)</option>
-{% endblock groups%          
+{% endblock groups %}          
 </select>
       </div>
      <!--HeARED CLosE-->
@@ -44,6 +44,7 @@
           <li role="presentation" {% if request.path == "/" %}class='active'{% endif %}><a href="{% url 'home' %}">Студенти</a></li>
             <li role="presentation" {% if '/journal' in request.path %}class="active"{% endif %}><a href="/journal">Відвідування</a></li>
           <li role="presentation" {% if "/groups" in request.path %}class='active'{% endif %}><a href="{% url 'groups' %}">Групи</a></li>
+ <li role="presentation" {% if "/ekamyn" in request.path %}class='active'{% endif %}><a href="{% url 'ekzamyn' %}">Групи</a></li>
         </ul>
     </div>
   </div> <!--END sub-header-->

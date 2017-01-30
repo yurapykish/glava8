@@ -3,8 +3,9 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from ..model import Student, Group
-
+from ..model import Student
+from ..group import Group
+from ..ekz import Ekzamyn
 def students_list(request):
     students = Student.objects.all()
      

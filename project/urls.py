@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from students.views import students, groups, journal
+from students.views import students, groups, journal, ekzamyn
 
 urlpatterns  = [
 #STUDENtS
@@ -30,7 +30,11 @@ urlpatterns  = [
 	url(r"^groups/(?P<gid>\d+)/delete/$", groups.groups_delete, name="groups_delete"),
 
 	url(r"^journal/$", journal.journal, name="journal"),
-	url(r"^admin/", admin.site.urls),	
+	url(r"^ekzamyn/$", ekzamyn.ekzamyns, name="ekzamyn"),	
+	url(r"^ekzamyn/add/$", ekzamyn.ekzamyn_add, name="ekzamyn_add"),
+	url(r"^admin/", admin.site.urls),
+
+	
 ]
 
 from .settings import MEDIA_ROOT, DEBUG 

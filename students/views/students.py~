@@ -3,14 +3,15 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from ..model import Student, Group
-
+from ..model import Student
+from ..group import Group
+from ..ekz import Ekzamyn
 def students_list(request):
     students = Student.objects.all()
      
    
 # paginator        
-    students = students.order_by('last_name', 'ticket', 'last_name', 'id')
+    students = students.order_by('last_name', 'ticket', 'last_name', 'id', 'student_group')
   
     if request.GET.get ('reverse', '') == '1':
         students = students.reverse()

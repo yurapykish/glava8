@@ -88,7 +88,8 @@
 		{% endfor %}
               </tbody>
           </table>
- {% include "pagination.html" %}
+<a href="" id="loadMore">Load More</a>
+ 
                     
  {% endblock content %}
  

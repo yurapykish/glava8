@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block meta_title %}Екзамен{% endblock meta_title %}
+{% block title %}Список екзаменів{% endblock title %}
+{% block logo%}Сервіс Оцінювання Студентів{% endblock logo%}
+{% block groups %}
+            <option value=””>МтМ - 21, Подоба Віталій (No 254)</option>
+            <option value=””>МтМ - 22, Пукіш Андрій (No 2123)</option>
+{% endblock groups %}  
+{% block content %}
+
+
+                 <a href="{% url 'ekzamyn_add' %}" class="btn btn-primary">Додати Екзамен</a>
+          <!--tablE-->
+          <table class="table table-hover table-striped">
+
+ {% with order_by=request.GET.order_by reverse=request.GET.reverse %}
+  <thead>
+    <tr>
+        <th><a href="{% url "home" %}?order_by=id{% if order_by == 'id' and reverse != '1' %}&amp;reverse=1{% endif %}">#
+	{% if order_by == 'id' and reverse != '1' %}&uarr;
+	{% elif order_by == 'id' and reverse == '1' %} &darr;
+	{% endif %}
+</th>
+<th>Предмет</th>
+<th>Дата і час проведення</th>
+<th>Викладач</th>
+<th>Група</th>
+
+        </thead>
+  {% endwith %}
+              <tbody>
+ 		 {% for exzamyn in exzamyns %}
+              <tr>
+                  <td>{{ forloop.counter }}</td>
+                  <td><a title='Редагувати' href="">{{exzamyn.exzamyn}}</a></td>
+		  <td><a title='Редагувати' href=""></a>{{exzamyn.exzamyn_date}}</td>
+		  <td><a title='Редагувати' href=""></a>{{exzamyns.teacher}}</td>
+		   <td><a title='Редагувати' href=""></a>{{exzamyns.ekz_group}}</td>
+               </tr>
+		{% endfor %}
+              </tbody>
+          </table>
+ 
+                    
+ {% endblock content %}
+ 
+            
+                {% block footer %}&copy; 2017 Сервіс Обліку Студентів{% endblock footer %}
+

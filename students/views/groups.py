@@ -3,13 +3,15 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from ..model import Group, Student
+from ..ekz import Ekzamyn
+from ..model import Student
+from ..group import Group
 def groups_list(request):
     groups = Group.objects.all()
     groups = groups.order_by ('title', 'leader') 
     if request.GET.get('reverse', '') == '1':
        groups = groups.reverse()
-    paginator = Paginator(groups, 3)
+    paginator = Paginator(groups, 2)
     page = request.GET.get('page')
     try:
         groups = paginator.page(page)

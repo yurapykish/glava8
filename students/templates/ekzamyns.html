@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block meta_title %}Екзамен{% endblock meta_title %}
+{% block title %}Список екзаменів{% endblock title %}
+{% block logo%}Сервіс Оцінювання Студентів{% endblock logo%}
+{% block groups %}
+            <option value=””>МтМ - 21, Подоба Віталій (No 254)</option>
+            <option value=””>МтМ - 22, Пукіш Андрій (No 2123)</option>
+{% endblock groups %}  
+{% block content %}
+
+
+                 <a href="{% url 'ekzamyn_add' %}" class="btn btn-primary">Додати Екзамен</a>
+          <!--tablE-->
+          <table class="table table-hover table-striped">
+
+ {% with order_by=request.GET.order_by reverse=request.GET.reverse %}
+  <thead>
+    <tr>
+        <th><a href="{% url "ekzamyn" %}?order_by=id{% if order_by == 'id' and reverse != '1' %}&amp;reverse=1{% endif %}">#
+	{% if order_by == 'id' and reverse != '1' %}&uarr;
+	{% elif order_by == 'id' and reverse == '1' %} &darr;
+	{% endif %}
+</a></th>
+<th><a href="{% url "ekzamyn" %}?order_by=ekzamyn{% if order_by == 'ekzamyn' and reverse != '1' %}&amp;reverse=1{% endif %}">Предмет
+{% if order_by == 'ekzamyn' and reverse != '1' %}&uarr;
+	{% elif order_by == 'ekzamyn' and reverse == '1' %} &darr;
+	{% endif %}</a></th>
+<th><a href="{% url "ekzamyn" %}?order_by=ekzamyn_date{% if order_by == 'ekzamyn_date' and reverse != '1' %}&amp;reverse=1{% endif %}">Дата і час проведення
+{% if order_by == 'ekzamyn_date' and reverse != '1' %}&uarr;
+	{% elif order_by == 'id' and reverse == '1' %} &darr;
+	{% endif %}</a></th>
+<th><a href="{% url "ekzamyn" %}?order_by=teacher{% if order_by == 'teacher' and reverse != '1' %}&amp;reverse=1{% endif %}">Викладач
+{% if order_by == 'teacher' and reverse != '1' %}&uarr;
+	{% elif order_by == 'teacher' and reverse == '1' %} &darr;
+	{% endif %}</a></th>
+<th><a href="{% url "ekzamyn" %}?order_by=ekz_group{% if order_by == 'ekz_group' and reverse != '1' %}&amp;reverse=1{% endif %}">Група{% if order_by == 'ekz_group' and reverse != '1' %}&uarr;
+	{% elif order_by == 'ekz_group' and reverse == '1' %} &darr;
+	{% endif %}</a></th>
+
+        </thead>
+  {% endwith %}
+              <tbody>
+ 		 {% for ekzamyn in ekzamyns %}
+              <tr>
+                  <td>{{ forloop.counter }}</td>
+                  <td>{% if ekzamyn %}<a title='Редагувати' href="">{{ekzamyn.ekzamyn}}</a>{% else %} Ще не призначено</td>{% endif %}
+		  <td>{% if ekzamyn.ekzamyn_date %}<a title='Редагувати' href="">{{ekzamyn.ekzamyn_date}}</a>{% else %} Ще не призначено</td>{% endif %}
+		  <td>{% if ekzamyn.teacher%}<a title='Редагувати' href="">{{ekzamyn.teacher}}</a>{% else %} Вчитель в запою!</td>{% endif %}
+		   <td>{% if ekzamyn.ekz_group%}<a title='Редагувати' href="">{{ekzamyn.ekz_group}}</a>{% else %} Студентu переховується від армії</td>{% endif %}
+               </tr>
+		{% endfor %}
+              </tbody>
+          </table>
+ 
+                    
+ {% endblock content %}
+ 
+            
+                {% block footer %}&copy; 2017 Сервіс Обліку Студентів{% endblock footer %}
+

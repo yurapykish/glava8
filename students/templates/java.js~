@@ -1,0 +1,10 @@
+$(document).ready(function () {
+    size_li = $("students_list").size();
+    x=2;
+    $('#myList li:lt('+x+')').show();
+    $('#loadMore').click(function () {
+        x= (x+2 <= size_li) ? x+3 : size_li;
+        $('#myList li:lt('+x+')').show();
+    });
+   
+});
