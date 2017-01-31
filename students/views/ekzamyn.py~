@@ -11,7 +11,7 @@ def ekzamyns(request):
     ekzamyns = ekzamyns.order_by('ekzamyn', 'ekzamyn_date', 'teacher', 'id', 'ekz_group')
   
     if request.GET.get ('reverse', '') == '1':
-        ekzamyns = students.reverse()
+        ekzamyns = ekzamyns.reverse()
     return render(request, 'ekzamyns.html', {'ekzamyns':ekzamyns})
 def ekzamyn_add(request):
     return HttpResponse('<h1>ekzamyn Add Form</h1>')

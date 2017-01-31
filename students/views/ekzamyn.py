@@ -2,9 +2,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from ..ekz import Ekzamyn
-from ..model import Student
-from ..group import Group
+
+from ..models import Student, Group, Ekzamyn
+
 def ekzamyns(request):
 
     ekzamyns = Ekzamyn.objects.all()

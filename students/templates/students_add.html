@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block meta_title %}Додати студента{% endblock meta_title %}
+{% block title %}Додати студента{% endblock title %}
+{% block logo%}Сервіс Облікy Студентів{% endblock logo%}
+{% block groups %}
+            <option value=””>МтМ - 21, Подоба Віталій (No 254)</option>
+            <option value=””>МтМ - 22, Пукіш Андрій (No 2123)</option>
+{% endblock groups %}  
+{% block content %}
+<form action="{% url 'students_add' %}" method="post" enctype="multipart/form-data">
+    <div>
+        <label for="first_name">Ім*я</label>
+        <input type="text" value="" name="first_name" id="first_name" placeholder="Введіть Ваше ім*я" required autofocus/>
+    </div>
+    <div>
+        <label for="last_name">Прізвище</label>
+        <input type="text" value="" name="last_name" id="last_name" placeholder="Введіть Ваше прізвище" required />
+    </div>
+    <div>
+        <label for="middle_name">По-батькові</label>
+        <input type="text" value="" name="middle_name" id="middle_name" placeholder="Не обов*язкове поле"/>
+    </div>
+    <div>
+        <label for="birthday">Дата народження</label>
+        <input type="datetime" name="birthday" id="birthday" placeholder="Введіть дату народження"/>
+    </div>
+    <div>
+        <label for="photo">Фото</label>
+        <input type="file" id="photo" name="photo" value=""/>
+    </div>
+    <div>
+        <label for="ticket">№ Білета</label>
+        <input type="text" name="ticket" id="ticket" value="" placeholder="наприклад 4"/>
+
+    </div>
+
+    <div>
+        <label for="student_group">Група</label>
+        <select name="student_group" id="student_group">
+          <option value=””>Виберіть групу</option>
+          <option value=”1”>МтМ-1</option>
+          <option value=”2”>МтМ-2</option>
+        </select>
+    </div>
+    <div>
+        <label for="notes">Нотатки</label>
+        <textarea  name="notes" id="notes" class="form-controll"></textarea>
+    </div>
+    <div>
+        <input type="submit" name="add__button" value="Додати"/>
+        <button type=”submit” name=”cancel_button”>Скасувати</button>
+    </div>
+</form>
+
+Forma will be
+                    
+ {% endblock content %}
+ 
+            
+                {% block footer %}&copy; 2017 Сервіс Обліку Студентів{% endblock footer %}
+

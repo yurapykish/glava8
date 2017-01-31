@@ -98,8 +98,8 @@ class Ekzamyn(models.Model):
 	   
 	#      return u'%s %s' % (self.inspector.first_name, self.inspector.last_name)
 	    
-def __unicode__(self):
-	return u'%s' % (self.ekzamyn)
+	def __unicode__(self):
+            return u'%s' % (self.ekzamyn)
 	      
 	    
 class Group (models.Model):

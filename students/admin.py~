@@ -1,7 +1,6 @@
 from django.contrib import admin
-from model import Student
-from group import Group
-from ekzamyn import Ekzamyn 
+from model import Student, Group, Ekzamyn
+
 # Register your models here.
 admin.site.register(Ekzamyn)
 admin.site.register(Group)

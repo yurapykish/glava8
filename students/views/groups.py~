@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
+from ..ekz import Ekzamyn
 from ..model import Student
 from ..group import Group
 def groups_list(request):
